@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boston Birthing Rights</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body onload="initialize()">
+  <section class="nav secondary-color font-primary-color">
+    <div class="logo">
+      <img src="assets/logos/beigetransparent.png" />
+      <h1>Boston Birth Rights</h1>
+    </div>
+    <ul class="list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="map.html">Map</a></li>
+      <li><a href="resources.html">Resources</a></li>
+    </ul>
+  </section>
+
+  <div id="map"></div>
+  <section class="map-below primary-color">
+    <div>
+      <img src="assets/photos/purplepin.png" />
+      <h3 class="font-tertiary-color">Education</h3>
+    </div>
+    <div>
+      <img src="assets/photos/bluepin.png" />
+      <h3 class="font-tertiary-color">Medical</h3>
+    </div>
+    <div>
+      <img src="assets/photos/pinkpin.png" />
+      <h3 class="font-tertiary-color">Doula</h3>
+    </div>
+  </section>
+  <section class="resources tertiary-color">
+    <p class="font-primary-color">Find contact information of organizations <em><a href="resources.html">here</a></em>.</p>
+  </section>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3NzA_fydt0gpj3j5wjYvLjgllpjnyZDs">
+  </script>
+  <script type="text/javascript">
+    function initialize() {
+      var mapOptions = {
+        center: new google.maps.LatLng(42.3601, -71.0589),
+        zoom: 12,
+        styles: [
+    {
+        "featureType": "all",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#ff7000"
+            },
+            {
+                "lightness": "69"
+            },
+            {
+                "saturation": "100"
+            },
+            {
+                "weight": "1.17"
+            },
+            {
+                "gamma": "2.04"
+            }
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#cb8536"
+            }
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels",
+        "stylers": [
+            {
+                "color": "#ffb471"
+            },
+            {
+                "lightness": "66"
+            },
+            {
+                "saturation": "100"
+            }
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "gamma": 0.01
+            },
+            {
+                "lightness": 20
+            }
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels.text.stroke",
+        "stylers": [
+            {
+                "saturation": -31
+            },
+            {
+                "lightness": -33
+            },
+            {
+                "weight": 2
+            },
+            {
+                "gamma": 0.8
+            }
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels.icon",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "all",
+        "stylers": [
+            {
+                "lightness": "-8"
+            },
+            {
+                "gamma": "0.98"
+            },
+            {
+                "weight": "2.45"
+            },
+            {
+                "saturation": "26"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "lightness": 30
+            },
+            {
+                "saturation": 30
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "saturation": 20
+            }
+        ]
+    },
+    {
+        "featureType": "poi.park",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "lightness": 20
+            },
+            {
+                "saturation": -20
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "lightness": 10
+            },
+            {
+                "saturation": -30
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "saturation": 25
+            },
+            {
+                "lightness": 25
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "all",
+        "stylers": [
+            {
+                "lightness": -20
+            },
+            {
+                "color": "#ecc080"
+            }
+        ]
+    }
+]
+      };
+      var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+      var locations = [['<b>Resilient Sisterhood Project,</b><br>263 Huntington Ave, Suite 302, Boston, MA 02115', 42.34280014038086, -71.08507537841797, "https://maps.google.com/mapfiles/ms/micons/purple.png"],
+      ['<b>Birth Sister Program at Boston Medical Center,</b><br> One Boston Medical Center Place, Boston, MA 02118', 42.33633041381836, -71.07012939453125, "https://maps.google.com/mapfiles/ms/micons/pink.png"],
+      ['<b>Accompany Doula Care,</b><br> 233 Bay State Road, Boston, MA 02215', 42.35114288330078, -71.10643005371094, "https://maps.google.com/mapfiles/ms/micons/pink.png"],
+                       ['<b>Planned Parenthood Boston,</b><br>1055 Commonwealth Ave, Boston, MA 02215', 42.3520622253418, -71.12298583984375,"https://maps.google.com/mapfiles/ms/micons/blue.png"],
+                       ['<b>Betsy Lehman Center,</b><br>501 Boylston Street, 5th Floor, Boston, MA, 02116', 42.350372314453125, -71.07628631591797,"https://maps.google.com/mapfiles/ms/micons/blue.png"],
+                       ['<b>Tufts Medical Center Maternal Fetal Medicine Program,</b><br>800 Washington St, Boston, MA 02111',42.34966278076172,-71.06365203857422,"https://maps.google.com/mapfiles/ms/micons/blue.png"], ['<b>Maternal & Child Health Center of Excellence,</b><br>715 Albany Street, Boston, MA 02118', 42.3382568359375, -71.06681823730469,"https://maps.google.com/mapfiles/ms/micons/purple.png"], ["<b>Women's Foundation of Boston,</b><br>423 Brookline Ave Suite 223, Boston, MA 02215", 42.33889389038086, -71.10725402832031,"https://maps.google.com/mapfiles/ms/micons/purple.png"], ["<b>Ibis Reproductive Health,</b><br>2067 Massachusetts Ave, Cambridge, MA 02140", 42.39080810546875, -71.12190246582031,"https://maps.google.com/mapfiles/ms/micons/purple.png" ]
+      ];
+
+      var infowindow = new google.maps.InfoWindow();
+
+      var marker, i;
+
+      for (i = 0; i < locations.length; i++) {
+
+        marker = new google.maps.Marker({
+          position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+          icon: locations[i][3],
+          map: map
+        });
+
+        google.maps.event.addListener(marker, 'click', (function (marker, i) {
+          return function () {
+            infowindow.setContent(locations[i][0]);
+            infowindow.open(map, marker);
+          }
+        })(marker, i));
+      }
+    }
+  </script>
+</body>
+
+</html>
